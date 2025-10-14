@@ -32,7 +32,7 @@ app.post("/send", (req, res) => {
 
 // GET /get: Retrieves the latest message, or an empty string if it has expired.
 app.get("/get", (req, res) => {
-    const TIMEOUT_MS = 60000;
+    const TIMEOUT_MS = 1000;
     
     // Check if the message has timed out (1 second)
     if (messageTimestamp && Date.now() - messageTimestamp > TIMEOUT_MS) {
@@ -50,4 +50,5 @@ app.get("/get", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
