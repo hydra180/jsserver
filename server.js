@@ -45,10 +45,11 @@ app.get("/get", (req, res) => {
     }
 
     // Send the latest message (will be "" if null/expired)
-    res.type('text/plain').send(latestMessage || "No fresh message available.");
+    res.type('text/plain').send(latestMessage || "");
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
